@@ -3,6 +3,7 @@ package br.com.pedrelosa.userapi.services.impl;
 import br.com.pedrelosa.userapi.domain.User;
 import br.com.pedrelosa.userapi.repositories.UserRepository;
 import br.com.pedrelosa.userapi.services.UserService;
+import br.com.pedrelosa.userapi.services.exceptions.ObjectNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,11 +17,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findById(Long id) {
-        return userRepository.findById(id).orElse(null);
+        return userRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("Object not found"));
     }
 
     @Override
     public List<User> findAll() {
-        return null;
+        return userRepository.findAll();
     }
 }
