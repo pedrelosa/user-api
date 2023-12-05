@@ -1,10 +1,9 @@
-package br.com.pedrelosa.userapi.services.imp;
+package br.com.pedrelosa.userapi.services.impl;
 
 import br.com.pedrelosa.userapi.domain.User;
 import br.com.pedrelosa.userapi.repositories.UserRepository;
 import br.com.pedrelosa.userapi.services.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
